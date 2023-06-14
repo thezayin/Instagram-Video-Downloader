@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1039675488890",
+    "project_id": "ig-reel-downloader",
+    "storage_bucket": "ig-reel-downloader.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039675488890:android:76b3d9546e86e7ea0f59c3",
+        "android_client_info": {
+          "package_name": "com.example.igreeldownloader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1039675488890-4pbmg8ueae0eecf9dqtsv6s4nq00g59d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBRqZvnvRmXVFnCZf8ZAYQQ1rzGFzTAvVg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1039675488890-4pbmg8ueae0eecf9dqtsv6s4nq00g59d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
