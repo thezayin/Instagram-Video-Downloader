@@ -16,7 +16,7 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "IG Reel Downloader"
+rootProject.name = "Real Downloader"
 include ':app'
 include ':ads'
 include ':analytics'

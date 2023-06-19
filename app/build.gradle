@@ -9,15 +9,15 @@ plugins {
 }
 
 android {
-    namespace 'com.example.igreeldownloader'
+    namespace 'com.bluelock.realdownloader'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.igreeldownloader"
+        applicationId "com.bluelock.realdownloader"
         minSdk 24
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "0.0.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -36,6 +36,7 @@ android {
         jvmTarget = '17'
     }
     buildFeatures {
+        buildConfig = true
         viewBinding true
         dataBinding true
     }

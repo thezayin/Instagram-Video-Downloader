@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FB Reel Downloader</string>
+    <string name="app_name">Real Downloader</string>
 
     <!--api links-->
     <string name="download_started">Download Started</string>
