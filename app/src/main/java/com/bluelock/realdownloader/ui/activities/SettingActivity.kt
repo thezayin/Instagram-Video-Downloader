@@ -64,14 +64,14 @@ class SettingActivity : AppCompatActivity() {
                 lTerm.setOnClickListener {
                     intent = Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse("https://bluelocksolutions.blogspot.com/p/terms-and-conditions.html")
+                        Uri.parse("https://bluelocksolutions.blogspot.com/p/terms-and-conditions-for-instagram.html")
                     )
                     startActivity(intent)
                 }
                 lPrivacy.setOnClickListener {
                     intent = Intent(
                         Intent.ACTION_VIEW,
-                        Uri.parse("https://bluelocksolutions.blogspot.com/p/privacy-policy.html")
+                        Uri.parse("https://bluelocksolutions.blogspot.com/p/privacy-policy-for-instagram-downloader.html")
                     )
                     startActivity(intent)
                 }
