@@ -60,10 +60,25 @@ class SettingActivity : AppCompatActivity() {
                         finish()
                     }
                 }
+
+                lTerm.setOnClickListener {
+                    intent = Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://bluelocksolutions.blogspot.com/p/terms-and-conditions.html")
+                    )
+                    startActivity(intent)
+                }
+                lPrivacy.setOnClickListener {
+                    intent = Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://bluelocksolutions.blogspot.com/p/privacy-policy.html")
+                    )
+                    startActivity(intent)
+                }
                 lContact.setOnClickListener {
                     val emailIntent = Intent(
                         Intent.ACTION_SENDTO,
-                        Uri.parse("mailto:zainshahidbuttt@gamail.com")
+                        Uri.parse("mailto:blue.lock.testing@gmail.com")
                     )
                     emailIntent.putExtra(Intent.EXTRA_SUBJECT, "FB Reel Downloader")
                     emailIntent.putExtra(Intent.EXTRA_TEXT, "your message here")

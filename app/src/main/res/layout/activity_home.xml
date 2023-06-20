@@ -45,7 +45,7 @@
         android:layout_marginStart="@dimen/_25sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_25sdp"
-        android:text="Download your favourite Instagram videos and reals without watermark for free."
+        android:text="Download your favourite Instagram videos and reels without watermark for free."
         android:textColor="@color/black"
         android:textSize="@dimen/_14ssp"
         app:layout_constraintEnd_toEndOf="parent"

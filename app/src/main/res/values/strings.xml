@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Real Downloader</string>
+    <string name="app_name">Reel Downloader</string>
 
     <!--api links-->
     <string name="download_started">Download Started</string>
