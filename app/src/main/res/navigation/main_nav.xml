@@ -3,11 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_nav"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
-        android:id="@+id/splashFragment"
-        android:name="com.example.igreeldownloader.ui.presentation.splash.SplashFragment"
-        android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" />
+        android:id="@+id/homeFragment"
+        android:name="com.bluelock.realdownloader.ui.presentation.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_downloadedFragment"
+            app:destination="@id/downloadedFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/downloadedFragment"
+        android:name="com.bluelock.realdownloader.ui.presentation.download.DownloadedFragment"
+        android:label="DownloadedFragment" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.bluelock.realdownloader.ui.presentation.setting.SettingFragment"
+        android:label="SettingFragment" />
 </navigation>

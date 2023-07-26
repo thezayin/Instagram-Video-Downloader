@@ -1,25 +1,28 @@
-package com.bluelock.realdownloader.models;
+package com.bluelock.realdownloader.models
 
-import com.google.gson.annotations.SerializedName;
+import com.google.gson.annotations.SerializedName
 
-import java.util.ArrayList;
-
-public class FacebookVideo {
+class FacebookVideo {
     @SerializedName("error")
-    public boolean error;
-    @SerializedName("msg")
-    public String msg;
-    @SerializedName("data")
-    public ArrayList<Data> data;
+    var error = false
 
-    public static class Data {
+    @SerializedName("msg")
+    var msg: String? = null
+
+    @SerializedName("data")
+    var data: ArrayList<Data>? = null
+
+    class Data {
         @SerializedName("url")
-        public String url;
+        var url: String? = null
+
         @SerializedName("format")
-        public String format;
+        var format: String? = null
+
         @SerializedName("ext")
-        public String ext;
+        var ext: String? = null
+
         @SerializedName("format_id")
-        public String format_id;
+        var format_id: String? = null
     }
 }

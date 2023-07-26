@@ -2,46 +2,125 @@ package com.bluelock.realdownloader.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.bluelock.realdownloader.databinding.ActivitySplashBinding
+import com.bluelock.realdownloader.remote.RemoteConfig
+import com.bluelock.realdownloader.util.isConnected
+import com.example.ads.GoogleManager
+import com.example.ads.newStrategy.types.GoogleInterstitialType
+import com.google.android.gms.ads.AdError
+import com.google.android.gms.ads.FullScreenContentCallback
+import com.google.android.gms.ads.interstitial.InterstitialAd
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class SplashActivity : AppCompatActivity() {
     lateinit var binding: ActivitySplashBinding
 
+    private var progressStatus = 0
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    @Inject
+    lateinit var googleManager: GoogleManager
+
+    @Inject
+    lateinit var remoteConfig: RemoteConfig
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         binding = ActivitySplashBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.apply {
 
 
-            val background: Thread = object : Thread() {
-                override fun run() {
-                    try {
-                        // Thread will sleep for 5 seconds
-                        sleep((5 * 1000).toLong())
+            progressStatus = progressBar.progress
 
-                        // After 5 seconds redirect to another intent
-                        val i = Intent(baseContext, MainActivity::class.java)
-                        startActivity(i)
+            lifecycleScope.launch {
+                while (true) {
+                    delay(400)
 
-                        //Remove activity
-                        finish()
-                    } catch (e: Exception) {
-                        Log.d("jejeex", e.toString())
+                    if (progressStatus < 100) {
+                        progressBar.progress = progressStatus
+                        progressStatus += 10
+
+                    } else {
+                        if (remoteConfig.showAppOpenAd) {
+                            if (getAppOpenAd()) {
+                                Log.d("jeje_splash", "done")
+                            } else {
+                                showInterstitialAd {
+                                    navigateToNextScreen()
+                                }
+                            }
+                        } else {
+                            showInterstitialAd {
+                                navigateToNextScreen()
+                            }
+                        }
+                        break
                     }
                 }
             }
+        }
+    }
 
-            // start thread
+    fun navigateToNextScreen() {
+        this.let {
+            val intent = Intent(it, MainActivity::class.java)
+            it.startActivity(intent)
+        }
+    }
 
-            // start thread
-            background.start()
+    private fun getAppOpenAd(): Boolean {
+
+        if (!this.isConnected()) return false
+        val ad = googleManager.createAppOpenAd() ?: return false
+
+        ad.fullScreenContentCallback = object : FullScreenContentCallback() {
+            override fun onAdDismissedFullScreenContent() {
+                super.onAdDismissedFullScreenContent()
+                navigateToNextScreen()
+            }
+
+            override fun onAdFailedToShowFullScreenContent(p0: AdError) {
+                super.onAdFailedToShowFullScreenContent(p0)
+                navigateToNextScreen()
+            }
+        }
+        ad.show(this)
+        return true
+
+        return false
+    }
+
+    private fun showInterstitialAd(callback: () -> Unit) {
+        if (remoteConfig.showInterstitial) {
+            val ad: InterstitialAd? =
+                googleManager.createInterstitialAd(GoogleInterstitialType.MEDIUM)
+
+            if (ad == null) {
+                callback.invoke()
+                return
+            } else {
+                ad.fullScreenContentCallback = object : FullScreenContentCallback() {
+                    override fun onAdDismissedFullScreenContent() {
+                        super.onAdDismissedFullScreenContent()
+                        callback.invoke()
+                    }
+
+                    override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                        super.onAdFailedToShowFullScreenContent(error)
+                        callback.invoke()
+                    }
+                }
+                ad.show(this)
+            }
+        } else {
+            callback.invoke()
         }
     }
 }

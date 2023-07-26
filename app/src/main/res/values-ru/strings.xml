@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Загрузчик роликов</string>
+
+    <!--api links-->
+    <string name="download_started">Загрузка началась</string>
+    <string name="enter_url">Введите адрес</string>
+    <string name="enter_valid_url">Введите действительный URL-адрес</string>
+
+    <string name="nav_open">Открыть</string>
+    <string name="nav_close">Закрывать</string>
+    <string name="title_activity_navigation">НавигацияАктивность</string>
+    <string name="navigation_drawer_open">Открыть панель навигации</string>
+    <string name="navigation_drawer_close">Закрыть панель навигации</string>
+    <string name="nav_header_title">Android-студия</string>
+    <string name="nav_header_subtitle">android.studio\@android.com</string>
+    <string name="nav_header_desc">Заголовок навигации</string>
+    <string name="action_settings">Настройки</string>
+
+    <string name="downloading">Загрузка…</string>
+    <string name="processing">Обработка…</string>
+    <string name="complete">Полный</string>
+
+    <!--api links-->
+    <string name="facebook_api_base_url">https://downloader-api.sikderithub.com/link.php</string>
+    <string name="insta_api_base_url">https://downloader-api.sikderithub.com/instagram.php</string>
+    <string name="snapchat_api_base_url">https://downloader-api.sikderithub.com/snap.php</string>
+    <string name="likee_api_base_url">https://downloader-api.sikderithub.com/instagram.php</string>
+    <string name="moz_api_base_url">https://downloader-api.sikderithub.com/instagram.php</string>
+
+
+    <string name="top_banner_api_base_url">https://sdownloader.sikderithub.com</string>
+    <string name="force_update_api_base_url">https://sdownloader.sikderithub.com</string>
+    <string name="download_api_base_url">https://downloader-api.sikderithub.com</string>
+
+
+    <string name="facebook_app_id">1023640758601249</string>
+    <string name="fb_login_protocol_scheme">фб1234</string>
+    <string name="facebook_client_token">0ec429661843bb7356004a392a5c31e8</string>
+
+    <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+    <string name="admob_app_id">ca-app-pub-8326396827024206~7836143249</string>
+    <!-- Sample AdMob native ads ID: ca-app-pub-3940256099942544/2247696110 -->
+    <string name="admob_native_ad_id">код ca-app-pub-8326396827024206/3490785696</string>
+
+
+    <!-- Todo: Have to change this while  publishing-->
+
+    <!--Notice dialog api and app name-->
+    <string name="base_url">https://sikderithub.com/dialog.php</string>
+    <string name="app_name_web">ВГ</string>
+
+    <string name="get_started">Начать</string>
+    <string name="easy_to_use">Легко использовать</string>
+    <string name="insta_download">Инста скачать</string>
+
+    <string name="instagram_link">Ссылка на инстаграм</string>
+    <string name="paste_link">Вставить ссылку</string>
+    <string name="download">Скачать</string>
+    <string name="permission_title">Ой! Вы отказали в разрешении</string>
+    <string name="write_permission_request">Мне нужно разрешение на хранение, чтобы сохранить медиафайл в вашем хранилище.\nБез разрешения я не могу сохранить ваш файл.</string>
+    <string name="privacy_policy">политика конфиденциальности</string>
+    <string name="share_app">Поделись этим приложением</string>
+    <string name="share_message">Привет! Я нашел это замечательное приложение.\nОно помогает мне загружать фотографии из Instagram прямо на мое устройство.\nПосмотрите здесь 👉</string>
+    <string name="select_an_app">Выберите приложение для совместного использования</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Привет пустой фрагмент</string>
+
+
+</resources>
